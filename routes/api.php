@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::match(['get'], '/get_data/{id}', 'IndexController@get_data');
+Route::match(['get'], '/get_types', 'IndexController@get_types');

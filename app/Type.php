@@ -10,4 +10,12 @@ class Type extends Model
     protected $fillable = [
         'name', 'slug', 'link'
     ];
+    protected $hidden = [
+        'link'
+    ];
+
+    public function crawl()
+    {
+        return $this->hasMany('App\Crawl');
+    }
 }

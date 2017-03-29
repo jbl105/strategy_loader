@@ -13,3 +13,4 @@
 
 Route::match(['get','post'], '/', 'IndexController@index');
 Route::match(['get','post'], '/crawl/{slug}', 'IndexController@crawl');
+Route::match(['get','post'], '/crawl_all/{slug}', 'IndexController@crawl_all');
