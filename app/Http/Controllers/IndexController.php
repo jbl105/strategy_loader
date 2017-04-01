@@ -40,7 +40,13 @@ class IndexController extends Controller
     	}else{
     		$data['status'] = 'fail';
     	}
-    	return response()->json($data, 200, array(), JSON_PRETTY_PRINT);
+    	$headers = [
+    		'Access-Control-Allow-Origin' => '*',
+    		'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS',
+    		'Access-Control-Max-Age' => '1000',
+    		'Access-Control-Allow-Headers' => 'Content-Type'
+    	];
+    	return response()->json($data, 200, $headers, JSON_PRETTY_PRINT);
     }
 
     public function get_data($id, Request $request){
@@ -52,7 +58,13 @@ class IndexController extends Controller
     	}else{
     		$data['status'] = 'fail';
     	}
-    	return response()->json($data, 200, array(), JSON_PRETTY_PRINT);
+    	$headers = [
+    		'Access-Control-Allow-Origin' => '*',
+    		'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS',
+    		'Access-Control-Max-Age' => '1000',
+    		'Access-Control-Allow-Headers' => 'Content-Type'
+    	];
+    	return response()->json($data, 200, $headers, JSON_PRETTY_PRINT);
     }
 
     public function crawl_part($crawler, $part_id = ''){
